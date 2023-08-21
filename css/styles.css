@@ -56,17 +56,45 @@ img {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  gap: 24px;
+  /* gap: 24px; */
 }
 
+/* ---PHONE SCREEN--- */
 .container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
+  min-width: 320px;
+  max-width: 428px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ---TABLET SCREEN--- */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+  }
+}
+
+/* ---DESKTOP SCREEN--- */
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1128px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
 }
 
 /* ====== HEADER =======*/
@@ -235,47 +263,116 @@ img {
   overflow: hidden;
 }
 
-.features-list,
-.caption-list,
+.features-list
+/*
 .team-list,
-.customers-list {
+.customers-list { */ {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
-.features-items,
-.team-list-item {
-  flex-basis: calc((100% - 3 * 24px) / 4);
+@media screen and (min-width: 768px) {
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
 }
 
-.second-section-icon {
-  background-color: var(--background-color-grey);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 112px;
-  margin-bottom: 8px;
-  border-radius: 4px;
+@media screen and (min-width: 1158px) {
+  .features-list,
+  .caption-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .features-items {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .features-items
+  /* .team-list-item { */ {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+}
+
+.svg-hide {
+  display: none;
+}
+
+@media screen and (min-width: 1158px) {
+  .svg-hide {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .second-section-icon {
+    background-color: var(--background-color-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
 }
 
 .title {
   font-family: var(--global-font);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.4px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
   color: var(--second-text-color);
   margin-bottom: 8px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+  }
 }
 
 .subtitle {
   font-family: var(--global-font);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.32px;
   color: var(--global-text-color);
+}
+
+@media screen and (min-width: 1158px) {
+  .subtitle {
+    font-weight: 400;
+  }
+}
+
+.section-hide {
+  display: none;
+}
+
+@media screen and (min-width: 1158px) {
+  .section-hide {
+    display: initial;
+  }
 }
 
 .caption {
@@ -291,7 +388,7 @@ img {
 }
 
 .caption-list-item {
-  flex-basis: calc((100%-24px * 2) / 3);
+  flex-basis: calc((100% - 24px * 2) / 3);
 }
 
 .team-title {
@@ -507,7 +604,7 @@ img {
   border: 1px solid var(--cornflower);
   border-radius: 4px;
   min-width: 68px;
-  transition: color var(--transition-dur-fun);
+  transition: background-color var(--transition-dur-fun), color var(--transition-dur-fun);
 }
 
 .portfolio-btn:hover,
