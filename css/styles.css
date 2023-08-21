@@ -1219,7 +1219,4 @@ input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox .custom-
   }
 }
 
-.header-navigation {
-  display: flex;
-  align-items: center;
-}
+/* code without portfolio */
