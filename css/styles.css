@@ -1218,3 +1218,8 @@ input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox .custom-
     gap: 30px;
   }
 }
+
+.header-navigation {
+  display: flex;
+  align-items: center;
+}
