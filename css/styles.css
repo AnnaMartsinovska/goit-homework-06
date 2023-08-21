@@ -673,6 +673,7 @@ img {
   .footer-second-block {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 0;
   }
 }
 
