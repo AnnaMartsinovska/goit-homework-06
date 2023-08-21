@@ -583,8 +583,8 @@ img {
 }
 
 .logo-footer {
-  /* display: inline-block;
-  margin-bottom: 16px; */
+  display: inline-block;
+  margin-bottom: 16px;
 }
 
 .footer-blocks {
@@ -597,6 +597,7 @@ img {
 }
 
 .footer-first-block {
+  align-items: center;
   /* margin-right: 120px; */
 }
 
@@ -1014,10 +1015,14 @@ input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox .custom-
   position: fixed;
   top: 0;
   left: 0;
+
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   padding: 40px;
   padding-top: 80px;
+  padding-right: 35px;
   background-color: var(--background-color-white);
   z-index: 999;
 
@@ -1030,6 +1035,8 @@ input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox .custom-
 }
 
 .menu-container .menu-toggle {
+  min-width: 24px;
+  min-height: 24px;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -1045,37 +1052,57 @@ input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox .custom-
   margin: 0;
   list-style: none;
 }
+.mobile-menu-item:not(:last-child),
+.mobile-contacts-item:not(:last-child) {
+  margin-bottom: 40px;
+}
 
-.mobile-menu .link {
+.mobile-contacts {
+  margin-top: auto;
+  margin-bottom: 48px;
+}
+
+.mobile-menu-link,
+.mobile-contacts-link {
   display: block;
-  padding: 0 0 40px 0;
-  text-decoration: none;
-}
-
-.mobile-menu-item {
-}
-
-.mobile-menu-link {
-  font-family: var(--global-font);
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--second-text-color);
 }
 
-.mobile-link-adress {
-  font-family: var(--global-font);
+.mobile-menu-link:active {
+  color: var(--active-button);
+}
+
+.mobile-contacts-link {
+  color: var(--global-color-blue);
+}
+
+@media screen and (max-width: 427px) {
+  .mobile-contacts-link {
+    font-size: 24px;
+  }
+}
+
+.mobile-contacts-adress {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.02em;
   color: var(--global-text-color);
 }
 
-.mobile-icon-list {
+.mobile-socials {
   display: flex;
   align-items: center;
   gap: 56px;
+}
+
+@media screen and (max-width: 427px) {
+  .mobile-socials {
+    gap: 30px;
+  }
 }
